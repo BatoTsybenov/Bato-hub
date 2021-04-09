@@ -4,7 +4,7 @@ evens = []
 
 
 
-odds = [1, 3, 5, 7, 9] #5 elements, list is 5
+odds = [1, 3, 5, 7, 9]   #5 elements, list is 5
 # 0.1.2.3.4.index
 friends = ['jackson', 'said', 'linur', 'tyson']
 first_friend = friends[0]
