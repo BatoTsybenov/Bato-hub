@@ -1,5 +1,6 @@
 fullname = "John doe"
 msg = "we are looking at string functions in Python."
+print(fullname.strip())
 print(fullname.upper())
 print(fullname.title())
 print(msg.replace('.' , '!!!!!!!').title())
@@ -9,7 +10,8 @@ msg1 = fullname.title() + ", " + msg
 print(msg1)
 print(fullname.upper() + ", " + msg)
 
-print(fullname.upper() + "\n\t\t\t, " + msg)
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+print(fullname.upper() + "\t\t\t, " + msg)
 msg2 = fullname.title() + " \n\t\t\t" + msg
 print(msg2)
 print(msg2.replace('\t', ''))
@@ -18,7 +20,7 @@ print((msg2.strip()))
 msg3 = '\n\t\t\t' + fullname.title() + ", " + msg
 print(msg3)
 print(msg3.strip())
-
+print('*************************')
 msg3 = '\n\t\t\t' + fullname.title() + ", " + msg
 msg4 = f"{fullname.title()} , {msg} cool day i believe"
 print("fstring")
@@ -35,7 +37,7 @@ print("value of num is : " + str(num))
 print("num + num2 = " + str(num +num2))
 
 num3 = "753"
-print(f"num + num3 = + {num + int(num3)}")
+print(f"num + num3 = {num + int(num3)}")
 print(f"4 ** 2 = {4**2}")
 
 num4 = 45.55
