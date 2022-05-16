@@ -76,4 +76,4 @@ def print_usernames(users: list):
         print(f"current user is : {user}")
 
 
-# print_usernames(['karim', 'ronaldo', 'roger']) # users = ['karim', 'ronaldo', 'roger']users = ['karim', 'ronaldo', 'roger']
+print_usernames(['karim', 'ronaldo', 'roger']) # users = ['karim', 'ronaldo', 'roger']users = ['karim', 'ronaldo', 'roger']
