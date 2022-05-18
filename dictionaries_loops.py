@@ -40,7 +40,7 @@ sorted_friends = sorted(friends)
 friends.sort()  # can not assign to variable since it sorts original list and does not return anything that can be assigned
 print(sorted_friends)
 print(friends)
-
+#fgbg
 favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python'}
 for name in sorted(favorite_languages.keys()):
     print(f"{name}'s favorite language is {favorite_languages[name]}")
