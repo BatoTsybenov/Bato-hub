@@ -1,5 +1,4 @@
-# 03/25/2021 functions with return statement
-# start get - return
+# 03/25/2021  Functions with return statement
 
 def get_formatted_name(firstname: str, lastname: str):
     name = f"{firstname.title()} {lastname.title()}"
@@ -8,74 +7,73 @@ def get_formatted_name(firstname: str, lastname: str):
 
 def print_formatted_name(firstname: str, lastname: str):
     name = f"{firstname.title()} {lastname.title()}"
-    return name
+    print(name)
 
 
 # full_name = get_formatted_name('john', 'doe')
-# print(get_formatted_name('john', 'doe'))
 # print(full_name)
-# #
+# print(get_formatted_name('jane', 'doe'))
+#
 # print_formatted_name('ali', 'tehrani')
-# student = print_formatted_name('abaur', 'eskara')
+# student = print_formatted_name('baur', 'eskara')
 # print(f"value of student is : {student}")
-# print(f"value of student is : {print_formatted_name('abaur', 'eskara')}")
+# print(f"value of student is : {print_formatted_name('baur', 'eskara')}")
 
 
 # getter, setter functions
-def get_description_of_what_you_want_to_get():
+def get_desc_of_what_you_want_to_get():
+    # logic
     return
 
 
-def set_desc_of_what_you_want_update():
+def set_desc_of_what_you_want_to_update():
     pass
 
 
 def get_list_of_even_numbers(num: int) -> list:
-    """this function returns list of even numbers up to num"""
-    # nums = []
+    """
+    This funciton returns list of even numbers up to num (inclusive).
+    :param num:
+    :return:
+    """
+    # return [range(2, num + 1, 2)]
     return list(range(2, num + 1, 2))
 
 
 # print(get_list_of_even_numbers(20))
+
+
 # print(get_list_of_even_numbers("20"))
 
 
-def get_list_of_odd_numbers(num: int) -> list:
-    """this function returns list of odd numbers up to num"""
+def get_list_of_odd_numbers(num):
+    """
+    This function returns list of odd numbers up to num (inclusive).
+    :param num:
+    :return: list
+    """
     odds = []
+    # logic here
     return odds
 
 
-def get_letter_counts(text: int) -> dict:
-    """this function returns a dictionary"""
+def get_letter_counts(text: str) -> dict:
+    """
+    This function returns a dictionary with letters as keys and counts as values
+    """
     letter_count = {}
+    # - loop through the text
+    # - create a dictionary for this letters
+    # - add each letter to the dictionary as a key and count (starting from 0) as a value
+    # - every time you add a letter to a dictionary check if dictionary has the same key, if dictionary has a key you increment the valeu
+    # if dictionary does not have you create new element and value = 1
+    # a: 1+1, d: 1+1, e: 1
     return letter_count
 
 
 def print_usernames(users: list):
     for user in users:
-        print(f"current user is: {user}")
-
-# print_usernames(['karim', 'ronaldo', 'roger'])  # >> users = ['karim', 'ronaldo', 'roger']
-
-def greet_users(names):
-# """Print a simple greeting to each user in the list."""
-    for name in names:
-        msg = "Hello, " + name.title() + "!"
-        print(msg)
-usernames = ['hannah', 'ty', 'margot']
-greet_users(usernames)
+        print(f"current user is : {user}")
 
 
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-completed_models = []
-# Simulate printing each design, until none are left.
-# Move each design to completed_models after printing.
-while unprinted_designs:
-    current_design = unprinted_designs.pop()
-    print("Printing model: " + current_design)
-    completed_models.append(current_design)
-
-print("The following models have been printed:")
-for completed_model in completed_models:
-    print(completed_model)
+print_usernames(['karim', 'ronaldo', 'roger']) # users = ['karim', 'ronaldo', 'roger']users = ['karim', 'ronaldo', 'roger']

@@ -1,17 +1,29 @@
-# 03/28/2021
-class Car():
-    """This class describes model of the car"""
+# 03/28/2021 Object-oriented Programming Concepts: Class and Object
+
+class Car:
+    """This class describes model of the car."""
 
     def __init__(self, brand, model, color):
-        """this is the constructor, with required parameters"""
-        self.brand = brand
+        """this is the constructor, with required parameters."""
+        self.brand = brand  # assigning the local brand variable to a global variable (self.brand)
         self.model = model
         self.color = color
-        self.odo_reader = 0
+        self.__odo_reader = 0  # encapsulation - hiding data from object(users)
 
     def set_odometer_reader(self, miles):
-        """Function to update the value of the odometer_reader global variable"""
-        self.odo_reader = miles
+        """Function to update the value of the odo_reader global variable."""
+        if miles > self.__odo_reader:
+            self.__odo_reader = miles
+        else:
+            print("miles can not be less than odometer miles.")
+
+    def increment_odometer_reader(self, miles: int):
+        """Function to increment the value of the odo_reader global variable."""
+        if miles > 0:
+            self.__odo_reader += miles
+            # self.__odo_reader = self.__odo_reader + miles
+        else:
+            print("Expected positive value for miles, negative is entered.")
 
     def drive(self):
         """driving action"""
@@ -21,49 +33,54 @@ class Car():
             print(f"You are driving the car even without DL! isn't it awesome!")
 
     def do_something(self):
-        print("I want to do something:....")
-        print("Let me drive:....")
+        print("I want to do something .....")
+        print("let me drive this car ;) ")
         self.drive()
         # motor = Motorcycle()
         # motor.drive()
 
     def get_description(self):
-        """"""
-        greet_user()
-        print(f"Model of the car is : {self.model}")
-        print(f"Color of the car is : {self.color}")
-        print(f"Brand of the car is : {self.brand}")
-        print(f"You have {self.odo_reader} miles")
-
-
-
-
-def greet_user():
-    print("hello master")
-
-
-mycar = Car("BMW", "530xi", "black")  # mycar is object, car is the class , this action is instantiation
-yourcar = Car("Lexus", "Lexus IS", "silver")
-
-mycar.get_description()
-mycar.drive()
-mycar.set_odometer_reader(50)
-mycar.odo_reader = 20
-mycar.color = 'Red'  # direct access to the instance variables
-mycar.get_description()
-print("-----------------------------------")
-yourcar.get_description()
-yourcar.drive()
-yourcar.set_odometer_reader(30)
-yourcar.get_description()
-
-
-# yourcar.do_something()
+        """ """
+        # print(f"Brand of the car: {self.model}") # we are using here local variable that is only inside __init__ method
+        # greet_user()
+        print(f"Model of the car: {self.model}")
+        print(f"Color of the car: {self.color}")
+        print(f"Brand of the car: {self.brand}")
+        print(f"You have {self.__odo_reader} miles on your car.")
 
 
 class ElectricCar(Car):
-    """child class"""
+    """This is the child class of Car. ElectricCar class inherits from Car class."""
 
-    def __init__(self, brand, model, color):
-        """"""
+    def __init__(self, brand, model, color, battery_size=60):
+        """this is the constructor, with required parameters."""
         super().__init__(brand, model, color)
+        self.battery_size = battery_size
+
+    def get_battery_info(self):
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_description(self):
+        super().get_description()
+        print(f"Battery size of the car: {self.battery_size}")
+
+    def drive(self):
+        print("You are driving EV! it is way awesome than just a car, maybe")
+
+
+class A:
+
+    def __init__(self, name):
+        self.name = name
+
+    def print_name(self):
+        print(f"name: {self.name}")
+
+
+class B(A):
+    """
+    old and stable code is in A class. B class is working copy of A for April changes
+    """
+
+    def __init__(self, name):
+        super().__init__(name)
